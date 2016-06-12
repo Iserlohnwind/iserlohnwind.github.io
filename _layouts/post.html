@@ -1,15 +1,16 @@
 ---
-layout: blog
+layout: default
 ---
 
-<article class="post">
- <div class="space-extra-small">
- </div>
-
-  <div class="entry">
-    {{ content }}
-  </div>
-
-  {% include disqus.html %}
+<article>
+    <header>
+        {% include title.html %}
+        {% include post_meta.html %}
+    </header>
+    {{ page.content }}
+    <footer>
+        {% if page.comments %}
+        {% include disqus.html %}
+        {% endif %}
+    </footer>
 </article>
-

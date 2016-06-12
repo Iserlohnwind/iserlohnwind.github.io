@@ -1,81 +1,88 @@
-#
-# This file contains configuration flags to customize your site
-#
 
-# Name of your site (displayed in the header)
-name: Your Username
+##########################################
+#     Change these variables !important
+##########################################
 
-# Short bio or description (displayed in the header)
-description: Programmer From Somewhere On Earth
+# Set this for Copyright in the footer
+owner: Name Surname
 
+# Optional quote in the footer
+# To disable set enable to false
+quote:
+  enable: true
+  quote: Some fancy quote.
+  author: John Doe
 
-#
-# Flags below are optional
-#
+# Set this to your main site title
+# In the head - ff page doesnt have its own title,
+# Site title will be used instead
+title: Aliquam Theme - Author Dennis Grinch
 
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email: daxiangxuezhang@gmail.com
-  facebook:
-  flickr:
-  github: Iserlohnwind
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: 
-  stackoverflow: # your stackoverflow profile, e.g. "users/3807565/akshay"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
+# Description and title below nav in the header
+punch-line: true
 
+# Your logo for the header
+logo:
+  title: John Doe
+  subtitle: Designer & Developer
 
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
+include:
+  - pages
+
+# Following needed for disqus integration
+# Set your 'disqus' account name
 disqus:
 
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
+# Uncomment if deployed locally
+# url: https://localhost:4000
 
-# Your website URL (e.g. http://akshayagarwal007.github.io)
-# Used for Sitemap.xml and your RSS feed
+# Set your host if deployed not locally
+# For example "https://yourGitHub.github.io"
 url:
 
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: "iserlohnwind.github.io"
+# Change this to your base URL starting with forward slash if site is in gh-pages branch
+# For example /branchName
+baseurl:"/iserlohnwind.github.io"
 
-#
-# !! You don't need to change any of the configuration flags below !!
-#
+# Change this to your google analytics ID
+google_analytics:
 
-permalink: /:title/
+# Contact form pupublic key
+contact_PK:
 
-# Jekyll 3 now only supports Kramdown for Markdown
-kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
+##########################################
+#          Optional variables
+##########################################
 
-# Set the Sass partials directory, as we're using @imports
+
+# Set maximum posts per page
+paginate: 5
+
+# Set permalink
+permalink: /:categories/:title
+
+# Set excerpt separator
+truncate_size: 40
+
+##########################################
+#          Do not change these variables
+##########################################
+
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  sass_dir: _sass
+sass:
+    style: compressed
 
-# Use the following plug-ins
+include:
+  - pages
+
 gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-paginate
+  - jekyll-sitemap # add /sitemap.xml file
 
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
+paginate_path: /_pages/page:num
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM

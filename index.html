@@ -1,18 +1,10 @@
 ---
 layout: default
+title: Fork, Clone & Enjoy.
+description: Minimalistic Jekyll theme for your blog. Easy to install and setup.
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+{% for page in paginator.posts %}
+{% include articles.html %}
+{% endfor %}
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="button button-primary">Read More</a>
-    </article>
-  {% endfor %}
-</div>
