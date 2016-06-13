@@ -1,25 +1,10 @@
-{% if site.quote["enable"] %}
-<blockquote id="footer-quote">
-    <p>
-        {% if page.quote %}
-        {{ page.quote["quote"] }}
-        {% else %}
-        {{ site.quote["quote"] }}
-        {% endif %}
-    </p>
-    <footer>
-        &#45; <cite>
-        {% if page.quote %}
-        {{ page.quote["author"] }}
-        {% else %}
-        {{ site.quote["author"] }}
-        {% endif %}
-    </cite>
-    </footer>
-</blockquote>
-{% endif %}
-<div id="footer-main">
-    <small>
-        &copy; 2016 {{ site.owner }}. ALL RIGHTS RESERVED.
-    </small>
-</div>
+{% if site.ads %}<div class="ads-wrapper">
+  {% include ad.html %}
+</div>{% endif %}
+<footer class="site-footer">
+  <div class="wrapper">
+      <div class="copy">
+          {{ site.time | date: '%Y' }} &copy; {{ site.title }}
+      </div>
+  </div>
+</footer>

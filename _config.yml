@@ -1,88 +1,51 @@
+# Site settings
+title: 风的空中楼阁
+email: daxiangxuezhang@mail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Welcome to my awesome blog.
+baseurl: "/iserlohnwind.github.io" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+google_analytics: #your GA unique id, e.g. UA-xxxxxxxx-x
+disqus_username: #Your disqus_username to add comments on the post
 
-##########################################
-#     Change these variables !important
-##########################################
-
-# Set this for Copyright in the footer
-owner: Name Surname
-
-# Optional quote in the footer
-# To disable set enable to false
-quote:
-  enable: true
-  quote: Some fancy quote.
-  author: John Doe
-
-# Set this to your main site title
-# In the head - ff page doesnt have its own title,
-# Site title will be used instead
-title: Aliquam Theme - Author Dennis Grinch
-
-# Description and title below nav in the header
-punch-line: true
-
-# Your logo for the header
-logo:
-  title: John Doe
-  subtitle: Designer & Developer
-
-include:
-  - pages
-
-# Following needed for disqus integration
-# Set your 'disqus' account name
-disqus:
-
-# Uncomment if deployed locally
-# url: https://localhost:4000
-
-# Set your host if deployed not locally
-# For example "https://yourGitHub.github.io"
-url:
-
-# Change this to your base URL starting with forward slash if site is in gh-pages branch
-# For example /branchName
-baseurl:
-
-# Change this to your google analytics ID
-google_analytics:
-
-# Contact form pupublic key
-contact_PK:
-
-##########################################
-#          Optional variables
-##########################################
+# Optional settings
+github: #your github username
+linkedin: #linkedin username
+twitter:
+  username: #twitter username here
+facebook:
+  app_id: 1234
+  publisher: 1234
+google_plus: #gplus id or username
+ads: false
 
 
-# Set maximum posts per page
-paginate: 5
+# Build settings
+markdown: kramdown
 
-# Set permalink
-permalink: /:categories/:title
-
-# Set excerpt separator
-truncate_size: 40
-
-##########################################
-#          Do not change these variables
-##########################################
-
-sass:
-  sass_dir: _sass
 sass:
     style: compressed
 
-include:
-  - pages
-
 gems:
+  - jekyll-redirect-from
+  - jekyll-mentions
   - jekyll-paginate
-  - jekyll-sitemap # add /sitemap.xml file
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jemoji
 
-paginate_path: /_pages/page:num
+defaults:
+    - {scope: {type: posts}, values: {layout: post, permalink : '/:year/:title'}}
 
-highlighter: rouge
-markdown: kramdown
-kramdown:
-  input: GFM
+include:
+  - _pages
+
+exclude:
+  - CNAME
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+paginate: 5
+paginate_path: 'p/:num'
